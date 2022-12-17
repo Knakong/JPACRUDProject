@@ -31,7 +31,7 @@ public class OrganismDAOImpl implements OrganismDAO {
 
 		List<Organism> organisms;
 		
-		String query = "SELECT c from Organism c";
+		String query = "SELECT c FROM Organism c";
 		
 		organisms = em.createQuery(query, Organism.class).getResultList();
 		
@@ -40,20 +40,44 @@ public class OrganismDAOImpl implements OrganismDAO {
 
 	@Override
 	public Organism create(Organism organism) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		em.persist(organism);
+		em.flush();
+		
+		return organism;
+		
+		
 	}
 
 	@Override
 	public Organism update(int id, Organism organism) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		Organism dbOrganism = em.find(Organism.class, id);
+		
+		dbOrganism.setDescription(organism.getDescription());
+		dbOrganism.setImgUrl(organism.getImgUrl());
+		dbOrganism.setLocation(organism.getLocation());
+		dbOrganism.setName(organism.getName());
+		dbOrganism.setScientificName(organism.getScientificName());
+		return dbOrganism;
+		
 	}
 
 	@Override
 	public boolean delete(int id) {
-		// TODO Auto-generated method stub
-		return false;
+
+		boolean deleted = false;
+		
+		Organism organism = em.find(Organism.class, id);
+		
+		if (organism !=null) {
+			
+			em.remove(organism);
+			deleted = !em.contains(organism);
+		}
+		
+		return deleted;
 	}
 
 }

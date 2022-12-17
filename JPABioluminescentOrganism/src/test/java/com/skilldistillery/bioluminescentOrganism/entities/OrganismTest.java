@@ -49,8 +49,9 @@ class OrganismTest {
 	@Test
 	void test_Organism_Entity() {
 		assertNotNull(organism);
-		assertEquals("Algae", organism.getName());
-	
+		assertEquals("Sea Sparkle", organism.getName());
+		assertEquals("https://news.agu.org/files/2019/06/Blue-tears-Yu-Xian-Yang-small.jpg", organism.getImgUrl());
+		assertEquals("Noctiluca scintillans is a marine species of dinoflagellate that can exist in a green or red form, depending on the pigmentation in its vacuoles. It can be found worldwide, but its geographical distribution varies depending on whether it is green or red. This unicellular microorganism is known for its ability to bioluminesce, giving the water a bright blue glow seen at night. However, blooms of this species can be responsible for environmental hazards, such as toxic red tides. They may also be an indicator of anthropogenic eutrophication.", organism.getDescription());
 	}
 	
 }

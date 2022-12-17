@@ -22,6 +22,29 @@ public class Organism {
 	@Column(name = "scientific_name")
 	private String scientificName;
 	
+	@Column(name ="description")
+	private String description;
+	
+	@Column(name = "location")
+	private String  location;
+	
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
 	public Organism() {
 	}
 
@@ -59,7 +82,8 @@ public class Organism {
 
 	@Override
 	public String toString() {
-		return "Organism [id=" + id + ", name=" + name + ", imgUrl=" + imgUrl + "]";
+		return "Organism [id=" + id + ", name=" + name + ", imgUrl=" + imgUrl + ", scientificName=" + scientificName
+				+ ", description=" + description + ", location=" + location + "]";
 	}
 
 }
