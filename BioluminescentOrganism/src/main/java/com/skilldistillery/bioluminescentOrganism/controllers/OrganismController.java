@@ -12,19 +12,28 @@ import com.skilldistillery.bioluminescentOrganism.entities.Organism;
 
 @Controller
 public class OrganismController {
-	
+
 	@Autowired
 	private OrganismDAO dao;
-	
-	
+
 	@RequestMapping(path = { "/", "home.do" })
-	
+
 	public String goToHome(Model model) {
-		
+
 		List<Organism> organisms = dao.findAll();
-		
+
 		model.addAttribute("organisms", organisms);
-		
+
 		return "home";
+	}
+
+	@RequestMapping(path = "getOrganism.do", params = "id")
+	public String goTodetails(Model model, int id) {
+
+		Organism organism = dao.findbyId(id);
+
+		model.addAttribute("organism", organism);
+
+		return "details";
 	}
 }

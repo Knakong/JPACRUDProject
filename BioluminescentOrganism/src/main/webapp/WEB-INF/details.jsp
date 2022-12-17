@@ -11,12 +11,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<div type="container">
 <body>
 <%@ include file="nav.jsp" %>
 
 <h1>${organism.name}</h1>
 <h2>${organism.scientificName}</h2>
-<h3>${oraganism.location}</h3>
+<h3>${organism.location}</h3>
 
 <img src="${organism.imgUrl}"/>
 
@@ -30,6 +31,6 @@ ${organism.description}
 </body>
 
 
-
+</div>
 
 </html>
