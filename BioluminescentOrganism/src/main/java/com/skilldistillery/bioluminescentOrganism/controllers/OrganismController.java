@@ -36,4 +36,22 @@ public class OrganismController {
 
 		return "details";
 	}
+
+@RequestMapping(path = "addOrganism.do", params = {"name", "scientificName", "description", "location", "imgUrl"})
+public String addOrganism(Model model, Organism organism) {
+	
+	Organism dbOrganism = dao.create(organism);
+	
+	model.addAttribute("organism", dbOrganism);
+	
+	return "details";
+	
+	
 }
+
+
+
+
+
+}
+
