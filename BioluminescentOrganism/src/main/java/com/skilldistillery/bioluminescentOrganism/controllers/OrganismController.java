@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.bioluminescentOrganism.data.OrganismDAO;
 import com.skilldistillery.bioluminescentOrganism.entities.Organism;
@@ -37,21 +39,24 @@ public class OrganismController {
 		return "details";
 	}
 
-@RequestMapping(path = "addOrganism.do", params = {"name", "scientificName", "description", "location", "imgUrl"})
-public String addOrganism(Model model, Organism organism) {
+	@RequestMapping(path = "addOrganism.do")
+public String addOrganism(Organism organism, Model model) {
+	
+	
 	
 	Organism dbOrganism = dao.create(organism);
 	
 	model.addAttribute("organism", dbOrganism);
 	
 	return "details";
-	
-	
 }
+	
+@RequestMapping(path="goToForm.do")
+public String goToform() {
+	
 
 
-
-
+return "newOrganismForm";
 
 }
-
+}
