@@ -25,8 +25,7 @@
 ${organism.description}
 </p>
 
-
-
+<p><a href="goToUpdateForm.do?id=${organism.id}">Update</a></p>
 
 </body>
 

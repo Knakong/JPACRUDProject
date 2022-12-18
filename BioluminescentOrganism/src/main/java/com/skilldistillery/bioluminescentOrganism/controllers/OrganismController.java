@@ -29,7 +29,7 @@ public class OrganismController {
 		return "home";
 	}
 
-	@RequestMapping(path = "getOrganism.do", params = "id")
+	@RequestMapping(path = "getOrganism.do")
 	public String goTodetails(Model model, int id) {
 
 		Organism organism = dao.findbyId(id);
@@ -48,8 +48,11 @@ public String addOrganism(Organism organism, Model model) {
 	
 	model.addAttribute("organism", dbOrganism);
 	
+	
 	return "details";
 }
+	
+	
 	
 @RequestMapping(path="goToForm.do")
 public String goToform() {
@@ -58,5 +61,35 @@ public String goToform() {
 
 return "newOrganismForm";
 
+
+
+
 }
+@RequestMapping(path="goToUpdateForm.do")
+public String goToUpdateForm(@RequestParam int id, Model model) {
+
+Organism organism = dao.findbyId(id);
+	
+model.addAttribute("organism", organism);
+
+return "updateForm";
+	
+}
+
+@RequestMapping(path ="updateOrganism.do")
+public String updateOrganism (@RequestParam int id, Organism organism, Model model) {
+	
+Organism updatedOrganism = dao.update(id, organism);
+
+model.addAttribute("organism", updatedOrganism);
+
+return "details";
+	
+}
+//@RequestMapping(path="updateOrganism.do")
+//public String updateOrganism() {
+// 
+//	return "results";
+//
+//}
 }

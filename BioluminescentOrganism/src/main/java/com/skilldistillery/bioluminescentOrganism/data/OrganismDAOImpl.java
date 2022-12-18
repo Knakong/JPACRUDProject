@@ -60,6 +60,7 @@ public class OrganismDAOImpl implements OrganismDAO {
 		dbOrganism.setLocation(organism.getLocation());
 		dbOrganism.setName(organism.getName());
 		dbOrganism.setScientificName(organism.getScientificName());
+		
 		return dbOrganism;
 		
 	}
