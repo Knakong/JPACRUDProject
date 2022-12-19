@@ -27,6 +27,15 @@ ${organism.description}
 
 <p><a href="goToUpdateForm.do?id=${organism.id}">Update</a></p>
 
+
+<form action="delete.do?">
+
+<input type="hidden" name="id" value="${organism.id}">
+
+<button type ="submit" >Delete Entry</button>
+
+</form>
+
 </body>
 
 

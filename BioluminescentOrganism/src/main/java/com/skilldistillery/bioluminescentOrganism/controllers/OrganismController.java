@@ -86,10 +86,23 @@ model.addAttribute("organism", updatedOrganism);
 return "details";
 	
 }
+
+@RequestMapping(path = "delete.do") 
+public String deleteOrganism(@RequestParam int id, Model model) {
+	
+	boolean deleted = dao.delete(id);
+	
+	model.addAttribute("deleted", deleted);
+	
+	return "deleted";
+	
+	
+}
+}
 //@RequestMapping(path="updateOrganism.do")
 //public String updateOrganism() {
 // 
 //	return "results";
 //
 //}
-}
+

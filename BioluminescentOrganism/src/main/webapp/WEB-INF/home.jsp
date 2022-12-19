@@ -19,6 +19,12 @@
 		<%@ include file="nav.jsp"%>
 		<h1> Bioluminescent Organisms</h1>
 
+		<form action="getOrganism.do" method="GET">
+		Organism ID: <input type="text" name="id" /> <input type="submit"
+			value="Show Organism" />
+	</form>
+		
+		
 		<h2></h2>
 
 		<c:forEach items="${organisms}" var="organism">
