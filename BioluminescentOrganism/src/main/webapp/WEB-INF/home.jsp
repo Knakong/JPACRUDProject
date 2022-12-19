@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <%@ include file="bootstrapHead.jsp"%>
 </head>
 <meta charset="UTF-8">
@@ -17,12 +18,6 @@
 <body>
 	<div class="container-md pt-3">
 		<%@ include file="nav.jsp"%>
-
-
-
-
-
-
 
 
 
