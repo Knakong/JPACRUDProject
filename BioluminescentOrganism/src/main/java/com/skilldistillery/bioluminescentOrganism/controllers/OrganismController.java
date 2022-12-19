@@ -99,10 +99,4 @@ public String deleteOrganism(@RequestParam int id, Model model) {
 	
 }
 }
-//@RequestMapping(path="updateOrganism.do")
-//public String updateOrganism() {
-// 
-//	return "results";
-//
-//}
 
