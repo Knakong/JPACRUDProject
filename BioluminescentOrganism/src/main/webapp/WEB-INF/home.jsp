@@ -17,14 +17,27 @@
 <div type="container">
 	<body>
 		<%@ include file="nav.jsp"%>
-		<h1> Bioluminescent Organisms</h1>
+		<h1>Bioluminescent Organisms</h1>
+
+
+
+
+
+
+
 
 		<form action="getOrganism.do" method="GET">
-		Organism ID: <input type="text" name="id" /> <input type="submit"
-			value="Show Organism" />
-	</form>
-		
-		
+			ID: <input type="text" name="id" /> <input type="submit"
+				value="Search by Organism id" />
+		</form>
+
+<br>
+		<form action="searchByKeyword.do" method="GET">
+			Keywords: <input type="text" name="keyword" /> <input type="submit"
+				value="Keyword Search">
+		</form>
+
+
 		<h2></h2>
 
 		<c:forEach items="${organisms}" var="organism">
