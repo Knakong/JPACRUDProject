@@ -12,9 +12,9 @@
 <%@ include file="bootstrapHead.jsp"%>
 </head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<div type="container">
+<title>deleted</title>
+
+<div class="container-md">
 	<body>
 		<%@ include file="nav.jsp"%>
 		<h2> Delete Confirmation</h2>

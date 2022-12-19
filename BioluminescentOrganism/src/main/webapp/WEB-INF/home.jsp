@@ -12,12 +12,12 @@
 <%@ include file="bootstrapHead.jsp"%>
 </head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<div type="container">
-	<body>
+<title>Bioluminescent Organisms</title>
+
+<body>
+	<div class="container-md pt-3">
 		<%@ include file="nav.jsp"%>
-		<h1>Bioluminescent Organisms</h1>
+
 
 
 
@@ -31,7 +31,7 @@
 				value="Search by Organism id" />
 		</form>
 
-<br>
+		<br>
 		<form action="searchByKeyword.do" method="GET">
 			Keywords: <input type="text" name="keyword" /> <input type="submit"
 				value="Keyword Search">
@@ -40,27 +40,26 @@
 
 		<h2></h2>
 
-		<c:forEach items="${organisms}" var="organism">
-			<table>
-				<thead>
-				</thead>
-
+		<table class="table table-hover">
+			<thead>
 				<tr>
-
-					<td>Id: ${organism.id}</td>
-
-					<td><a href="getOrganism.do?id=${organism.id}">${organism.name}</a>
-					<td>
+					<th>ID</th>
+					<th>Name</th>
 				</tr>
+			</thead>
+				<c:forEach items="${organisms}" var="organism">
+			<tbody>
+					<tr>
 
+						<td>Id: ${organism.id}</td>
 
+						<td><a href="getOrganism.do?id=${organism.id}">${organism.name}</a></td>
 
-
-
-
-
-			</table>
+					</tr>
+			</tbody>
+		
 		</c:forEach>
-	</body>
+		</table>
+</body>
 </div>
 </html>

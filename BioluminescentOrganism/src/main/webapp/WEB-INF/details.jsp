@@ -11,7 +11,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<div type="container">
+<div class="container-md">
 <body>
 <%@ include file="nav.jsp" %>
 
@@ -19,7 +19,7 @@
 <h2>${organism.scientificName}</h2>
 <h3>${organism.location}</h3>
 
-<img src="${organism.imgUrl}"/>
+<img class=".img-fluid" src="${organism.imgUrl}"/>
 
 <p>
 ${organism.description}

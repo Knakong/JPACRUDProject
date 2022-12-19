@@ -12,10 +12,10 @@
 <%@ include file="bootstrapHead.jsp"%>
 </head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<div type="container">
-	<body>
+<title>search results</title>
+
+<body>
+	<div type="container-md">
 		<%@ include file="nav.jsp"%>
 		<h2>Search Results</h2>
 
@@ -27,33 +27,29 @@
 
 
 		<c:choose>
-		<c:when test="${!empty organisms}">
-		<c:forEach items="${organisms}" var="organism">
-			<table>
-				<thead>
-				</thead>
+			<c:when test="${!empty organisms}">
+				<c:forEach items="${organisms}" var="organism">
+					<table class="table table-hover">
+						<thead>
+						</thead>
+						<th>ID</th>
+						<th>Name</th>
+						<tr>
 
-				<tr>
+							<td>Id: ${organism.id}</td>
 
-					<td>Id: ${organism.id}</td>
-
-					<td><a href="getOrganism.do?id=${organism.id}">${organism.name}</a>
-					<td>
-				</tr>
-
-
-
+							<td><a href="getOrganism.do?id=${organism.id}">${organism.name}</a>
+							<td>
+						</tr>
 
 
-
-
-			</table>
-		</c:forEach>
-		</c:when>
-		<c:when test="${empty organisms}">
-		<p>No results found</p>
-		</c:when>
+					</table>
+				</c:forEach>
+			</c:when>
+			<c:when test="${empty organisms}">
+				<p>No results found</p>
+			</c:when>
 		</c:choose>
-	</body>
-</div>
+	</div>
+</body>
 </html>

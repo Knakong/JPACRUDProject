@@ -10,9 +10,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<div type="container"></div>
 	<body>
-		<%@ include file="nav.jsp"%>
+<%@ include file="nav.jsp"%>
+<div class="container-md">
 	
 	
 	
@@ -44,6 +44,6 @@
 	
 	
 	
-	
+	</div>
 	</body>
 </html>
