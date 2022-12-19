@@ -1,5 +1,7 @@
 ### JPACRUDProject
 
+-http://35.83.15.242:8080/BioluminescentOrganism/home.do
+
 ## Description
 -As part of Skill Distillery's Full Stack programming with Java bootcamp, this week sprint introduced Jakarta Persistance Annotation API as well Spring Boot MVC. This project includes a fully functional web application that allows users to Create, Replace, Update, and Destroy entries of a database. The data I choose for my project on was a database featuring bioluminescent animals after crowd sourcing ideas at home. The database is one table that has 6 colums, id, name, scienitfic_name, img_url, location, and, description. Users can search by keyword or id to find a matching entry. From the a matching result, the information the column in displayed. At the bottom of the details page, the user can delete or update the entry. The user can also add a new organism to the database using the link in the nav menu. Additional on the homepage, a list of all entries is displayed, where the user can click the name of the organism and see the details page.
 
