@@ -32,7 +32,7 @@ public class OrganismController {
 	@RequestMapping(path = "getOrganism.do")
 	public String goTodetails(Model model, int id) {
 
-		Organism organism = dao.findbyId(id);
+		Organism organism = dao.findById(id);
 
 		model.addAttribute("organism", organism);
 
@@ -68,7 +68,7 @@ return "newOrganismForm";
 @RequestMapping(path="goToUpdateForm.do")
 public String goToUpdateForm(@RequestParam int id, Model model) {
 
-Organism organism = dao.findbyId(id);
+Organism organism = dao.findById(id);
 	
 model.addAttribute("organism", organism);
 
@@ -97,6 +97,14 @@ public String deleteOrganism(@RequestParam int id, Model model) {
 	return "deleted";
 	
 	
+}
+@RequestMapping(path ="searchByKeyword.do")
+public String searchByKeyword(@RequestParam String keyword, Model model) {
+	List<Organism> organisms = dao.findByKeyword(keyword);
+	
+	model.addAttribute("organisms", organisms);
+	
+	return "searchResults";
 }
 }
 

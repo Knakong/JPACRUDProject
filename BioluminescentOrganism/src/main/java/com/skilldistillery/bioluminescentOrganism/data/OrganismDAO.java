@@ -6,13 +6,15 @@ import com.skilldistillery.bioluminescentOrganism.entities.Organism;
 
 public interface OrganismDAO {
 
-	Organism findbyId(int id);
+	Organism findById(int id);
 	
 	List<Organism> findAll();
 	
 	Organism create(Organism organism);
 	
 	Organism update(int id, Organism organism);
+	
+	List<Organism> findByKeyword(String keyword);
 	
 	boolean delete (int id);
 	

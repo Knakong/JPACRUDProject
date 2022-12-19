@@ -19,7 +19,7 @@ public class OrganismDAOImpl implements OrganismDAO {
 	
 	
 	@Override
-	public Organism findbyId(int id) {
+	public Organism findById(int id) {
 
 		return em.find(Organism.class, id);
 		
@@ -31,7 +31,7 @@ public class OrganismDAOImpl implements OrganismDAO {
 
 		List<Organism> organisms;
 		
-		String query = "SELECT c FROM Organism c";
+		String query = "SELECT o FROM Organism o";
 		
 		organisms = em.createQuery(query, Organism.class).getResultList();
 		
@@ -79,6 +79,17 @@ public class OrganismDAOImpl implements OrganismDAO {
 		}
 		
 		return deleted;
+	}
+
+	@Override
+	public List<Organism> findByKeyword(String keyword) {
+		List<Organism> organisms = null;
+		
+		String query = "Select o FROM Organism o WHERE o.name LIKE :keyword OR o.description LIKE :keyword OR o.scientificName LIKE :keyword OR o.location LIKE :keyword";
+		
+		organisms = em.createQuery(query, Organism.class).setParameter("keyword", "%" + keyword + "%").getResultList();
+		
+		return organisms;
 	}
 
 }
